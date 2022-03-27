@@ -96,7 +96,7 @@ return {
 	 print('PRadio: ' .. selector.state .. '\t' .. stations[selector.state])
 	 dz.log('Radio: ' .. selector.state)
 	 -- Need to wait since another radio selector may still be switched off
-         os.execute("(sleep 1; mplayer -noconsolecontrols ".. stations[selector.state] ..") &> /dev/null")
+         os.execute("(killall mplayer; sleep 1; mplayer -noconsolecontrols ".. stations[selector.state] ..") &> /dev/null")
       end
    end
 }
